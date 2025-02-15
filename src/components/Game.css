@@ -17,6 +17,10 @@
   display: flex;
 }
 
+.wrongLettersContainer span {
+  text-transform: uppercase;
+}
+
 .letter,
 .blankSquare {
   font-size: 70px;

@@ -42,14 +42,15 @@ const Game = ({ verifyLetter, pickedWord, pickedCategory, letters, guessedLetter
       <div className="letterContainer">
         <p>Tente adivinhar uma letra da palavra:</p>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="letter" maxLength="1" required onChange={handleLetter} value={letter} ref={letterInputRef}/>
+          <input type="text" name="letter" maxLength="1" required onChange={handleLetter} value={letter} ref={letterInputRef} />
           <button type="submit" >Jogar!</button>
         </form>
       </div>
       <div className="wrongLettersContainer">
         <p>Letras já utilizadas:</p>
-        <span>a,</span>
-        <span>b,</span>
+        {wrongLetters.map((letter, i) => (
+          <span key={i}>{letter},  </span>
+        ))}
       </div>
     </div>
   )
